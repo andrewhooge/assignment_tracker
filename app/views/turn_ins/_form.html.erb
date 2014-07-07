@@ -1,0 +1,33 @@
+<%= form_for(@turn_in) do |f| %>
+  <% if @turn_in.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@turn_in.errors.count, "error") %> prohibited this turn_in from being saved:</h2>
+
+      <ul>
+      <% @turn_in.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :assignment_id %><br>
+    <%= f.number_field :assignment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

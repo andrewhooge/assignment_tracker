@@ -1,0 +1,31 @@
+<h1>Listing turn_ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Assignment</th>
+      <th>Url</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @turn_ins.each do |turn_in| %>
+      <tr>
+        <td><%= turn_in.user_id %></td>
+        <td><%= turn_in.assignment_id %></td>
+        <td><%= turn_in.url %></td>
+        <td><%= turn_in.completed %></td>
+        <td><%= link_to 'Show', turn_in %></td>
+        <td><%= link_to 'Edit', edit_turn_in_path(turn_in) %></td>
+        <td><%= link_to 'Destroy', turn_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Turn in', new_turn_in_path %>

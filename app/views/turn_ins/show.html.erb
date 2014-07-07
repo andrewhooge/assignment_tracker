@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @turn_in.user_id %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @turn_in.assignment_id %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @turn_in.url %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @turn_in.completed %>
+</p>
+
+<%= link_to 'Edit', edit_turn_in_path(@turn_in) %> |
+<%= link_to 'Back', turn_ins_path %>
